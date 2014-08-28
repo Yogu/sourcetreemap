@@ -1,5 +1,51 @@
-table.tablesorter,
-table.tablesorter thead tr th,
-table.tablesorter tfoot tr th {
-	font-size: inherit;
+#chart svg {
+  background: #ddd;
+  margin-bottom: 1em;
+}
+
+#chart svg {
+	width: 100%;
+}
+
+text {
+  pointer-events: none;
+  font-size: 12px;
+}
+
+.grandparent text {
+  font-weight: bold;
+  overflow: hidden;
+}
+
+rect {
+  fill: none;
+  stroke: #fff;
+}
+
+rect.parent,
+.grandparent rect {
+  stroke-width: 2px;
+  fill: #ddd;
+}
+
+.grandparent rect {
+  fill: orange;
+}
+
+.grandparent:hover rect {
+  fill: #ee9700;
+}
+
+.children rect.parent,
+.grandparent rect {
+  cursor: pointer;
+}
+
+.children rect.parent {
+  fill: #bbb;
+  fill-opacity: .5;
+}
+
+.children:hover rect.child {
+  fill: #bbb;
 }

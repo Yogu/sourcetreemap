@@ -29,7 +29,7 @@
 				<div class="form-horizontal">
 					<div class="form-group">
 						<div class="col-sm-10">
-							<input class="form-control" type="text" id="url-input"
+							<input class="form-control" type="text" id="url-input" value="http://wa5/js/all.min.js"
 								placeholder="URL to your minified javascript">
 						</div>
 						<button class="btn btn-primary col-sm-2" role="button" id="analyze-button">Analyze</button>
@@ -42,6 +42,9 @@
 		
 		<script id="table-template" type="x-tmpl-mustache">
 			<h1>Results</h1>
+
+			<div id="chart"></div>
+
 			<table class="tablesorter table table-hover table-condensed">
 				<thead>
 					<tr>
@@ -70,7 +73,11 @@
 		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		
 		<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+		<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+		
 		<script src="js/jquery.tablesorter.min.js"></script>
+		<script src="js/util.js"></script>
+		<script src="js/treemap.js"></script>
 		<script src="js/app.js"></script>
 	</body>
 </html>

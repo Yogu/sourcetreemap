@@ -32,18 +32,21 @@ $('#analyze-button').click(function() {
 				},
 				sortList: [[1, 1]]
 			});
+			
+			displayTreeMap(result.treeRoot);
+			updateChartLayout();
 		}
 	});
 });
 
-function humanFileSize(bytes, si) {
-    var thresh = si ? 1000 : 1024;
-    if(bytes < thresh) return bytes + ' Bytes';
-    var units = si ? ['kB','MB','GB','TB','PB','EB','ZB','YB'] : ['KiB','MiB','GiB','TiB','PiB','EiB','ZiB','YiB'];
-    var u = -1;
-    do {
-        bytes /= thresh;
-        ++u;
-    } while(bytes >= thresh);
-    return bytes.toFixed(1)+' '+units[u];
-};
+function updateChartLayout() {
+	var chart = $('#chart svg');
+	if (!chart.length)
+		return;
+	var aspect = chart.data('aspect');
+	var targetWidth = chart.parent().width();
+	chart.attr('width', targetWidth);
+	chart.attr('height', targetWidth / aspect);
+}
+
+$(window).resize(updateChartLayout);

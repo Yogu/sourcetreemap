@@ -11,10 +11,11 @@ app.use(express.static('public'));
 
 app.get('/analyze', function(req, res) {
 	analyzer.analyze(req.query.url).then(function(analyzer) {
-		res.send({ files: analyzer.files });
+		res.send({ files: analyzer.files, treeRoot: analyzer.treeRoot });
 		res.end();
 	}).catch(function(error) {
 		console.error(error.stack);
+		res.send(error);
 		res.end(500);
 	});
 });

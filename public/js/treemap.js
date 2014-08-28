@@ -107,7 +107,8 @@ function displayTreeMap(root) {
 
 		g.append("rect").attr("class", "parent").call(rect).append("title")
 			.text(function(d) {
-				return d.name + ': ' + humanFileSize(d.value, true);
+				return d.name + ': ' + humanFileSize(d.value, true) + ", " +
+					(d.value / root.value * 100).toFixed(1) + '%';
 			});
 
 		g.append("text").attr("dy", ".75em").text(function(d) {

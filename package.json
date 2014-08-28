@@ -1,0 +1,26 @@
+{
+  "name": "sourcetreemap",
+  "version": "0.0.1",
+  "description": "Visualize file sizes in minified javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --harmony_generators index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Yogu/sourcetreemap.git"
+  },
+  "author": "Jan Melcher",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Yogu/sourcetreemap/issues"
+  },
+  "homepage": "https://github.com/Yogu/sourcetreemap",
+  "dependencies": {
+    "express": "^4.8.6",
+    "q": "^1.0.1",
+    "q-io": "^1.11.4",
+    "source-map": "^0.1.38"
+  }
+}

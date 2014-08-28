@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>sourcetreemap</title>
+		
+		<!-- Bootstrap -->
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		
+		<link rel="stylesheet" href="css/tablesorter/blue/style.css">
+		<link rel="stylesheet" href="css/app.css">
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+	      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	</head>
+	<body>
+		<div class="container theme-showcase" role="main">
+			<div class="jumbotron">
+				<h1>sourcetreemap</h1>
+				<p>Use sourcemaps to visualize the file sizes in a minified javascript file.</p>
+				<div class="form-horizontal">
+					<div class="form-group">
+						<div class="col-sm-10">
+							<input class="form-control" type="text" id="url-input"
+								placeholder="URL to your minified javascript">
+						</div>
+						<button class="btn btn-primary col-sm-2" role="button" id="analyze-button">Analyze</button>
+					</div>
+				</div>
+			</div>
+		
+			<div id="result"></div>
+		</div>
+		
+		<script id="table-template" type="x-tmpl-mustache">
+			<h1>Results</h1>
+			<table class="tablesorter table table-hover table-condensed">
+				<thead>
+					<tr>
+						<th>File Name</th>
+						<th>Compressed Size</th>
+						<th>Original Size</th>
+						<th>Compression Ratio</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#files}}
+						<tr>
+							<td>{{path}}</td>
+							<td data-raw="{{generatedSize}}">{{#filesize}}{{generatedSize}}{{/filesize}}</td>
+							<td data-raw="{{originalSize}}">{{#filesize}}{{originalSize}}{{/filesize}}</td>
+							<td data-raw="{{compressionRatio}}">{{#percent}}{{compressionRatio}}{{/percent}}</td>
+						</tr>
+					{{/files}}
+				</tbody>
+			</table>
+		</script>
+	
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		
+		<script src="//cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+		<script src="js/jquery.tablesorter.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

@@ -1,0 +1,23 @@
+table.tablesorter thead tr .header {
+	cursor: pointer;
+}
+
+table.tablesorter thead tr .header:after {
+	display: inline-block;
+	width: 16px;
+	height: 9px;
+	content: '';
+	vertical-align: middle;
+	background-repeat: no-repeat;
+	
+	background-image: url(bg.gif);
+}
+
+table.tablesorter thead tr .headerSortUp:after {
+	background-image: url(asc.gif);
+	height: 4px;
+}
+table.tablesorter thead tr .headerSortDown:after {
+	background-image: url(desc.gif);
+	height: 4px;
+}
